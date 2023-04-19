@@ -1,0 +1,75 @@
+plugins {
+    alias(libs.plugins.com.android.application)
+    alias(libs.plugins.org.jetbrains.kotlin.android)
+}
+
+android {
+    namespace 'com.example.labsny'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.labsny"
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+        buildConfigField "String", "apikey", "${properties.getProperty('apikey')}"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled = true
+    }
+    android.buildFeatures.buildConfig true
+}
+
+dependencies {
+
+    implementation libs.core.ktx
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.constraintlayout
+    //okhttp3
+    //noinspection UseTomlInstead
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    //noinspection UseTomlInstead
+    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+    //fragment
+    //noinspection UseTomlInstead
+    implementation("androidx.fragment:fragment-ktx:1.5.6")
+    //splash screen
+    //noinspection UseTomlInstead
+    implementation("androidx.core:core-splashscreen:1.0.0")
+    //gson
+    //noinspection UseTomlInstead
+    implementation("com.google.code.gson:gson:2.10.1")
+    //location
+    //noinspection UseTomlInstead
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+    //glide
+    //noinspection UseTomlInstead
+    implementation("com.github.bumptech.glide:glide:4.14.1")
+    //noinspection UseTomlInstead
+    annotationProcessor("com.github.bumptech.glide:compiler:4.14.1")
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.test.ext.junit
+    androidTestImplementation libs.espresso.core
+
+}

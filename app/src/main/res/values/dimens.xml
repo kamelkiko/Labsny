@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="elevation">8dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="small_radius">8dp</dimen>
+    <dimen name="card_height">160dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_medium">16sp</dimen>
+    <dimen name="icon_weather_size">112dp</dimen>
+    <dimen name="text_extrla_large">32sp</dimen>
+    <dimen name="no_height">0dp</dimen>
+    <dimen name="large_radius">16dp</dimen>
+    <dimen name="no_width">0dp</dimen>
+    <dimen name="no_elevation">0dp</dimen>
+    <dimen name="progress_size">64dp</dimen>
+</resources>

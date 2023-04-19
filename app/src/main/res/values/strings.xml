@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Labsny</string>
+    <string name="khafir_el_sheikh">Khafir el sheikh</string>
+    <string name="desouk">Desouk</string>
+    <string name="egypt">Egypt</string>
+    <string name="temp">temp</string>
+    <string name="weather_condition_today">Weather condition today</string>
+    <string name="today">today</string>
+    <string name="yesterday">yesterday</string>
+    <string name="tomorrow">tomorrow</string>
+    <string name="cairo">Cairo</string>
+    <string name="egypts">/Egypt</string>
+    <string name="date">date</string>
+    <string name="time">time</string>
+    <string name="description">description</string>
+    <string name="submit">Submit</string>
+</resources>

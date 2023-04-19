@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/img_weather"
+        android:layout_width="@dimen/icon_weather_size"
+        android:layout_height="@dimen/icon_weather_size"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:contentDescription="@string/description"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toStartOf="@+id/textview_city_name"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/moon" />
+
+
+    <TextView
+        android:id="@+id/textview_city_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/dark_white"
+        android:textSize="@dimen/text_large"
+        app:layout_constraintBottom_toTopOf="@+id/textview_city_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_weather"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Cairo,Egypt" />
+
+    <TextView
+        android:id="@+id/textview_city_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/light_white"
+        android:textSize="@dimen/text_large"
+        app:layout_constraintEnd_toEndOf="@id/textview_city_name"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="@id/textview_city_name"
+        app:layout_constraintTop_toBottomOf="@+id/textview_city_name"
+        tools:text="10 Dec,2022" />
+
+    <TextView
+        android:id="@+id/textview_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_extrla_large"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_weather"
+        tools:text="25 °" />
+
+    <TextView
+        android:id="@+id/textview_temp_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:textColor="@color/dark_white"
+        android:textSize="@dimen/text_medium"
+        app:layout_constraintEnd_toEndOf="@id/textview_temperature"
+        app:layout_constraintStart_toStartOf="@id/textview_temperature"
+        app:layout_constraintTop_toBottomOf="@id/textview_temperature"
+        tools:text="Night Rain" />
+
+    <ImageView
+        android:id="@+id/img_reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_large"
+        android:contentDescription="@string/description"
+        android:src="@drawable/baseline_refresh_24"
+        app:layout_constraintBottom_toTopOf="@id/card_images_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_images_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/no_height"
+        android:layout_marginHorizontal="@dimen/margin_large"
+        android:layout_marginVertical="@dimen/margin_large"
+        android:backgroundTint="@color/card_background"
+        app:cardCornerRadius="@dimen/large_radius"
+        app:cardElevation="@dimen/no_elevation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textview_temp_status">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="@dimen/progress_size"
+                android:layout_height="@dimen/progress_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_shirt"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="@dimen/no_height"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_large"
+                android:contentDescription="@string/description"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.5"
+                tools:src="@drawable/black_shirt_sunny" />
+
+            <ImageView
+                android:id="@+id/img_pants"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="@dimen/no_height"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:contentDescription="@string/description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.5"
+                tools:src="@drawable/pant_1" />
+
+            <ImageView
+                android:id="@+id/img_shoes"
+                android:layout_width="@dimen/no_width"
+                android:layout_height="@dimen/no_height"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:contentDescription="@string/description"
+                app:layout_constraintBottom_toTopOf="@id/btn_submit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.5"
+                tools:src="@drawable/shoes_6" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/no_height"
+                android:layout_marginHorizontal="@dimen/margin_large"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:background="@drawable/button_backgorund"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:text="@string/submit"
+                android:textAllCaps="false"
+                android:textColor="@color/dark_white"
+                android:textSize="@dimen/text_large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.09"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
